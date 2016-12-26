@@ -16,7 +16,7 @@ The skill is pending in the Amazon review process. But feel free to test and dep
 ### Deutsch
 
 - Alexa, frage Falke **wann läuft wieder Tatort**
-- Alexa, frage Tatort **ob heute Tatort läuft**
+- Alexa, frage Falke **ob heute Tatort läuft**
 
 ## License
 
