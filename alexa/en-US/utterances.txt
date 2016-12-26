@@ -1,0 +1,18 @@
+Next when is the next Tatort
+Next when is the next Tatort shown
+Next when is the next Tatort broadcasted
+Next when is the next Tatort on air
+Next when the Next Tatort is
+Next when the Next Tatort is shown
+Next when the Next Tatort is on air
+Next when the Next Tatort is broadcasted
+Next when is Tatort again
+
+Check is {Date} a Tatort
+Check is {Date} a Tatort on tv
+Check is {Date} a Tatort broadcasted
+Check is {Date} a Tatort shown
+Check if {Date} is Tatort
+Check if {Date} Tatort is on air
+Check if {Date} Tatort is on tv
+Check if {Date} Tatort is broadcasted

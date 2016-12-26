@@ -1,0 +1,25 @@
+{
+  "intents": [
+    {
+      "intent": "Check",
+      "slots": [
+        {
+          "name": "Date",
+          "type": "LIST_OF_DATES"
+        }
+      ]
+    },
+    {
+		"intent": "Next"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

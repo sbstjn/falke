@@ -1,0 +1,15 @@
+Next wann der nächste Tatort kommt
+Next wann der nächste Tatort läuft
+Next wann kommt der nächste Tatort
+Next wann läuft der nächste Tatort
+Next wann wieder Tatort kommt
+Next wann wieder Tatort läuft
+Next wann läuft wieder Tatort
+Next wann kommt wieder Tatort
+
+Check kommt {Date} Tatort
+Check läuft {Date} Tatort
+Check gibt es {Date} Tatort
+Check ob {Date} Tatort läuft
+Check ob {Date} Tatort kommt
+Check ob es {Date} Tatort gibt
