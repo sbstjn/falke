@@ -2,6 +2,8 @@
 
 Use your Amazon Echo and ask Alexa when the next episode of the German TV show [Tatort](http://www.daserste.de/unterhaltung/krimi/tatort/index.html) is broadcasted.
 
+![Falke Tatort Amazon Echo Alex Skill](https://github.com/sbstjn/falke/raw/master/logo.png)
+
 The skill is pending in the Amazon review process. But feel free to test and deploy it on your own.
 
 ## Interactions
