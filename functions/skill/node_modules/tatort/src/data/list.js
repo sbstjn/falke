@@ -41,7 +41,7 @@
     }
 
     Search(func) {
-      return this.data.filter(func);
+      return new List(this.data.filter(func));
     }
   }
 

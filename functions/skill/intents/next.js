@@ -9,7 +9,11 @@
     return value > 9 ? value : '0' + value;
   }
 
-  exports = module.exports = (slots, lang) => t.after(new Date()).then(list => {
+  exports = module.exports = (slots, lang) => t.after(
+    new Date()
+  ).then(
+    list => list.Search(item => item.channel === "ARD")
+  ).then(list => {
     let L = require(__dirname + '/../locales/' + lang + '.js');
 
     if (list.Count() > 0) {

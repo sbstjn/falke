@@ -11,11 +11,11 @@
     }
 
     between(start, end) {
-      return this.list().then(list => new List(list.Search(item => item.date >= start && item.date <= end)))
+      return this.list().then(list => list.Search(item => item.date >= start && item.date <= end))
     }
 
     after(date) {
-      return this.list().then(list => new List(list.Search(item => item.date >= date)))
+      return this.list().then(list => list.Search(item => item.date >= date))
     }
 
     list() {
