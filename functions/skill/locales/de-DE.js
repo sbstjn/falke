@@ -7,7 +7,7 @@
     "CHECK_MULTIPLE": "{date} kommen {count} Tatorte!",
 
     "NEXT_TITLE": "Nächster Tatort",
-    "NEXT": "Der nächste Tatort läuf am {date} um {time} auf {channel}",
+    "NEXT": "Der nächste Tatort läuf am {day}. {month} um {time} auf {channel}",
     "NEXT_NONE": "Ich konnte keinen kommenden Tatort finden",
 
     "MONTH": ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
