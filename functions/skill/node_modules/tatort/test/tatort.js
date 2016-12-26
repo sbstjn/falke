@@ -41,7 +41,7 @@
 
       it('should return shows after specified date #3',
         () => t.after(
-          new Date(Date.UTC(2016, 11, 28, 21, 59, 59))
+          new Date(Date.UTC(2016, 11, 28, 20, 59, 59))
         ).then(
           list => {
             assert(list.First().name, 'Der Hammer');
@@ -51,7 +51,7 @@
 
       it('should return shows after specified date #4',
         () => t.after(
-          new Date(Date.UTC(2016, 11, 28, 22, 0, 0))
+          new Date(Date.UTC(2016, 11, 28, 21, 0, 0))
         ).then(
           list => {
             assert.equal(list.First().name, 'Der Hammer');
@@ -61,7 +61,7 @@
 
       it('should return shows after specified date #5',
         () => t.after(
-          new Date(Date.UTC(2016, 11, 28, 22, 0, 1))
+          new Date(Date.UTC(2016, 11, 28, 21, 0, 1))
         ).then(
           list => {
             assert.equal(list.First(), null);
@@ -73,8 +73,8 @@
     describe('between', () => {
       it('should filter shows #1',
         () => t.between(
-          new Date(Date.UTC(2016, 11, 28, 20, 0, 0)),
-          new Date(Date.UTC(2016, 11, 28, 22, 0, 0))
+          new Date(Date.UTC(2016, 11, 28, 19, 0, 0)),
+          new Date(Date.UTC(2016, 11, 28, 21, 0, 0))
         ).then(
           list => {
             assert.equal(list.Count(), 3);
@@ -84,8 +84,8 @@
 
       it('should filter shows #2',
         () => t.between(
-          new Date(Date.UTC(2016, 11, 26, 20, 0, 0)),
-          new Date(Date.UTC(2016, 11, 26, 20, 10, 0))
+          new Date(Date.UTC(2016, 11, 26, 19, 0, 0)),
+          new Date(Date.UTC(2016, 11, 26, 19, 10, 0))
         ).then(
           list => {
             assert.equal(list.Count(), 1);

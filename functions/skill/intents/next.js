@@ -8,11 +8,11 @@
   const addMissingZero = (value) => {
     return value > 9 ? value : '0' + value;
   }
-
+  
   exports = module.exports = (slots, lang) => t.after(
     new Date()
   ).then(
-    list => list.Search(item => item.channel === "ARD")
+    list => list.Search(item => ['ARD', 'NDR'].indexOf(item.channel) != -1)
   ).then(list => {
     let L = require(__dirname + '/../locales/' + lang + '.js');
 

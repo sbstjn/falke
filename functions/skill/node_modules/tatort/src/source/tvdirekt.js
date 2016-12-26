@@ -17,7 +17,7 @@
 
     return new Tatort(
       parent.find('h3 a').text().replace('Tatort: ', ''),
-      new Date(Date.UTC(now.getUTCFullYear(), date[1]-1, date[0], time[0], time[1], 0)),
+      new Date(now.getUTCFullYear(), date[1]-1, date[0], time[0], time[1], 0),
       channel
     )
   }

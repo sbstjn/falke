@@ -5,13 +5,12 @@ exports.handle = (event, context, callback) => {
   assert(event.session.application, 'Invalid event payload');
   assert(event.session.application.applicationId == process.env.APP_ID, "Invalid application ID");
 
-  try {
-    var intent = require('./intents/' + event.request.intent.name.toLowerCase() + '.js');
-  } catch (e) {
-    throw new Error('Unknown intent. Only `Next` or `Check` are available!');
+  var intent = event.request.intent.name.toLowerCase();
+  if (['next', 'check'].indexOf(intent) === -1) {
+    return callback();
   }
 
-  intent(
+  require('./intents/' + intent + '.js')(
     event.request.intent.slots, event.request.locale
   ).then(
     res => callback(null, {
