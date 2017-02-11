@@ -8,7 +8,6 @@
 
     "NEXT_TITLE": "Nächster Tatort",
     "NEXT": "Am {day}. {month} läuft um {time} die Folge \"{name}\" auf {channel}",
-    // "NEXT": "Der nächste Tatort läuft am {day}. {month} um {time} auf {channel}",
     "NEXT_NONE": "Ich konnte keinen kommenden Tatort finden",
 
     "MONTH": ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']

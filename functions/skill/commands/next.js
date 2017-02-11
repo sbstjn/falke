@@ -4,8 +4,9 @@
   // Am 5. Januar läuft um 20:15 die Folge "Spiel auf Zeit" auf WDR
 
   const AWS = require("aws-sdk");
-        AWS.config.update({region: "eu-west-1"});
+  AWS.config.update({region: "eu-west-1"});
   const ddb = new AWS.DynamoDB.DocumentClient();
+
   const moment = require('moment-timezone');
 
   Date.prototype.getDateString = function() {
@@ -16,13 +17,11 @@
     return this.toISOString().split('T')[1].split('.')[0];
   };
 
-  const normalizeShow = function(show) {
-    return {
-      name: show.episode,
-      date: moment(show.date),
-      channel: show.channel
-    };
-  };
+  const normalizeShow = show => ({
+    name: show.episode,
+    date: moment(show.date),
+    channel: show.channel
+  });
 
   const next = function() {
     var now = new Date();
@@ -56,13 +55,11 @@
     var L = require(__dirname + '/../locales/' + lang + '.js');
 
     return next().then(
-      show => {
-        return {
-          name: show.episode,
-          date: moment(show.date).tz('Europe/Berlin'),
-          channel: show.channel
-        };
-      }
+      show => ({
+        name: show.episode,
+        date: moment(show.date).tz('Europe/Berlin'),
+        channel: show.channel
+      })
     ).then(
       item => L.NEXT
         .replace('{day}', item.date.format('D'))
@@ -72,19 +69,15 @@
         .replace('{time}', [item.date.format('HH'), item.date.format('mm')].join(':'))
         .replace('{channel}', item.channel)
     ).then(
-      text => {
-        return {
-          text: text,
-          title: L.NEXT_TITLE
-        };
-      }
+      text => ({
+        text: text,
+        title: L.NEXT_TITLE
+      })
     ).catch(
-      error => {
-        return {
-          text: L.NEXT_NONE,
-          title: L.NEXT_TITLE
-        };
-      }
+      error => ({
+        text: L.NEXT_NONE,
+        title: L.NEXT_TITLE
+      })
     )
   };
 })();
