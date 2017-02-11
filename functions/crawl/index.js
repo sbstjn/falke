@@ -14,7 +14,7 @@
   exports.handle = (event, context, callback) => {
     t.list().then(list => {
       let data = list.data.filter(
-        item => ['NDR', 'ARD', 'HR', 'WDR', 'SWR RP'].indexOf(item.channel) !== -1
+        item => ['NDR', 'ARD', 'HR', 'WDR', 'SWR RP', 'RBB'].indexOf(item.channel) !== -1
       ).map(item => {
         return {
           PutRequest: {
