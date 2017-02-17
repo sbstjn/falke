@@ -1,0 +1,25 @@
+{
+  "name": "falke",
+  "version": "1.0.0",
+  "description": "Use your Amazon Echo and aks Alexa for upcoming air times of the German TV show Tatort",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.15.0",
+    "serverless": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "./node_modules/serverless/bin/serverless deploy",
+    "deploy:prod": "./node_modules/serverless/bin/serverless deploy --stage prod"
+  },
+  "keywords": [
+    "alexa",
+    "tatort",
+    "echo",
+    "amazon",
+    "serverless"
+  ],
+  "author": "Sebastian Müller <mail@sbstjn.com>",
+  "license": "MIT"
+}

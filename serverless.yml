@@ -1,0 +1,61 @@
+service: falke
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: dev
+  region: eu-west-1
+custom:
+  stage: ${opt:stage, self:provider.stage}
+functions:
+  skill:
+    handler: functions/skill.handler
+    environment:
+      APP_ID: ${opt:APP_ID}
+      STAGE: ${self:custom.stage}
+    events:
+      - alexaSkill
+  crawl:
+    handler: functions/crawl.handler
+    environment:
+      CHANNELS: NDR, ARD, HR, WDR, SWR RP, RBB
+      STAGE: ${self:custom.stage}
+    events:
+      - schedule: rate(30 minutes)
+package:
+  exclude:
+    - node_modules/**
+resources:
+  Resources:
+    DynamoDbTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:custom.stage}-episodes
+        AttributeDefinitions:
+          - AttributeName: show
+            AttributeType: S
+          - AttributeName: uuid
+            AttributeType: S
+        KeySchema:
+          - AttributeName: show
+            KeyType: HASH
+          - AttributeName: uuid
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+    DynamoDBIamPolicy:
+      Type: AWS::IAM::Policy
+      DependsOn: DynamoDbTable
+      Properties:
+        PolicyName: lambda-dynamodb
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:BatchWriteItem
+                - dynamodb:Query
+              Resource: arn:aws:dynamodb:*:*:table/${self:custom.stage}-episodes
+        Roles:
+          - Ref: IamRoleLambdaExecution

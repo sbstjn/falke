@@ -9,6 +9,31 @@ Benutze dein Amazon Echo und frage Alexa wann der nächste Tatort läuft! Kommis
 
 *Use your Amazon Echo and ask Alexa when the next episode of the German TV show [Tatort](http://www.daserste.de/unterhaltung/krimi/tatort/index.html) is broadcasted.*
 
+## serverless
+
+This application uses the [Serverless](https://serverless.com) toolkit to setup AWS.
+
+```bash
+$ > cd functions && npm install && cd ..
+$ > APP_ID=amzn1.ask.skill.XYZ npm run deploy:prod
+```
+
+Kommissar Falke consists of two AWS lambda functions. One for crawling new air times and one for responding to Alexa requests.
+
+### DynamoDB
+
+The crawler stores all air times in a DynamoDB table.
+
+```json
+{
+  "channel": "WDR",
+  "date": "2017-02-16T19:15:00Z",
+  "episode": "Schmuggler",
+  "show": "tatort",
+  "uuid": "2017-02-16T19:15:00Z@WDR"
+}
+```
+
 ## License
 
 Feel free to use the code, it's released using the [MIT license](https://github.com/sbstjn/falke/blob/master/LICENSE.md).
