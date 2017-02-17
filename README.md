@@ -1,7 +1,7 @@
 # Kommissar Falke - [Download bei Amazon](https://www.amazon.de/dp/B01MT2XXF3/ref=pe_1604851_66412761_cm_rv_eml_rv0_dp)
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-[![license](https://img.shields.io/github/license/sbstjn/falke.svg)]()
+[![license](https://img.shields.io/github/license/sbstjn/falke.svg)](https://github.com/sbstjn/falke)
 
 Benutze dein Amazon Echo und frage Alexa wann der nächste Tatort läuft! Kommissar Falke weiß welche Folge als nächstes kommt und ob morgen oder übermorgen ein Tatort im Fernsehen kommt!
 
